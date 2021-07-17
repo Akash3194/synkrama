@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% block title %}Login{% endblock %}
+
+{% block body %}
+  <div class="login_form_wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-8 shadow">
+                  <!-- login_wrapper -->
+                  <div class="login_wrapper">
+                      <div class="row">
+                          <h1 class="text-center mb-3">Login</h1>
+                          <div class="d-grid gap-2 text-center"> <a href="{% provider_login_url 'google' %}" class="btn btn-primary google-plus"> Login with Google <i class="fa fa-google-plus"></i> </a> </div>
+                      </div>
+                      <h2>or</h2>
+                      {% if form.non_field_errors %}
+                          <div class="non-field-errors">
+                            {% for err in form.non_field_errors %}
+                              <p class="form-error text-danger">{{ err }}</p>
+                            {% endfor %}
+                          </div>
+                    {% endif %}
+                      <form method="post"> {% csrf_token %}
+                          <div class="formsix-pos">
+                              <div class="form-group i-email"> <input type="text" name="username" class="form-control" required="" id="email2" placeholder="username *"> </div>
+                              {{form.username.error}}
+                          </div>
+                          <div class="formsix-e">
+                              <div class="form-group i-password"> <input type="password" name="password" class="form-control" required="" id="password2" placeholder="Password *"> </div>
+                              {{form.password.error}}
+                          </div>
+                          <div class="login_btn_wrapper d-grid gap-2"> <button type="submit" class="btn btn-primary login_btn"> Login </button> </div>
+                      </form>
+                  </div> <!-- /.login_wrapper-->
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}
+

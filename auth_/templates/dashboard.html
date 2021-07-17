@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% block title %}Login{% endblock %}
+
+{% block body %}
+  <div class="login_form_wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-8 shadow">
+                  <div class="login_wrapper">
+                      <div class="row">
+                          <h1 class="text-center mb-3">Profile</h1>
+                          <p>Username: {{object.username}}</p>
+                          <a class="btn btn-primary text-white" href="{% url 'logout' %}">Logout</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}
+
