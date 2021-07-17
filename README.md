@@ -22,7 +22,7 @@
  `python manage.py createsuperuser`
  
  ## Now go to social apps table and create new record
- ` Choose Google in provider, enter a name, enter your google client id and secret key`
+ ` Choose Google in provider, enter a name, enter your google client id and secret key and choose your sites from sites table (ex: 127.0.0.1:8000`
 
  ## run server using
  `python manage.py runserver`
